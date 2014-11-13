@@ -68,7 +68,7 @@
 
         window.onPlayerReady = function(e) {
             resize();
-            if(options.mute) e.target.mute();
+            /*if(options.mute) e.target.mute();*/
             e.target.seekTo(options.start);
             e.target.playVideo();
         }

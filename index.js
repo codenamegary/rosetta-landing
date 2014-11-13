@@ -48,4 +48,18 @@ var toggle = true;
     requestAnimationFrame(loop);
 })();
 
-var eyeSvg = new Vivus('eye-svg', { type: 'delayed', duration: 200, start: 'autostart', mute: false, repeat: true, increaseVolumeBy: 40 }, function(){});
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function shakeEye()
+{
+    $('#canvas').effect("shake", { times: getRandomInt(2,4), distance: getRandomInt(300, 400) }, getRandomInt(150,200));
+    setTimeout(function(){
+        shakeEye();
+    }, getRandomInt(500, 5000));
+}
+
+setTimeout(function(){
+    shakeEye();
+}, getRandomInt(500, 5000));
